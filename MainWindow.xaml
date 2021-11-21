@@ -1,0 +1,30 @@
+﻿<Window x:Class="WpfApp3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp3"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+         Title="Третье приложение" Height="600" Width="1000"
+        WindowStartupLocation="CenterScreen">
+    <Grid Background="#ffdadada">
+        <Border MinWidth="400px" Margin="15px" VerticalAlignment="Center" Padding="40px" Background="White" MaxWidth="500px" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightCoral" ShadowDepth="0"></DropShadowEffect>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="Застосунок Схема Мережі" FontSize="30px" TextAlignment="Center" FontWeight="Bold" Margin="0 0 0 20"/>
+                <Grid Margin="0 0 0 20">
+                    <Button  HorizontalAlignment="Left">Регистрация</Button>
+                    <Button HorizontalAlignment="Right" Click="Button_Window_Auth_Click" Style="{StaticResource MaterialDesignFlatButton}">Войти</Button>
+                </Grid>
+                <TextBox x:Name="textlogin" MouseDoubleClick="textlogin_MouseLeave" materialDesign:HintAssist.Hint="Введите логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+                <PasswordBox x:Name="textpassword" MouseDoubleClick="textpassword_MouseDoubleClick" materialDesign:HintAssist.Hint="Введите пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"></PasswordBox>
+                <PasswordBox x:Name="textsecond_password" MouseDoubleClick="textsecond_password_MouseDoubleClick" materialDesign:HintAssist.Hint="Введите пароль повторно" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"></PasswordBox>
+                <TextBox x:Name="textemail" MouseDoubleClick="textemail_MouseDoubleClick" materialDesign:HintAssist.Hint="Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+                <Button Content="Регистрация"   x:Name="regButton"   Margin="0 20" Click="Button_REG_Click" ></Button>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

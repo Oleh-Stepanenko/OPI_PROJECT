@@ -1,0 +1,40 @@
+﻿<Window x:Class="WpfApp3.AuthWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp3"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+         Title="Третье приложение" Height="400" Width="600"
+        WindowStartupLocation="CenterScreen">
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <EventTrigger.Actions>
+                <BeginStoryboard>
+                    <Storyboard TargetProperty="Width" TargetName ="authButton" >
+                        <DoubleAnimation From="0" To="450"  Duration="0:0:1"></DoubleAnimation>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger.Actions>
+        </EventTrigger>
+    </Window.Triggers>
+    
+    <Grid Background="#ffdadada">
+        <Border MinWidth="400px" Margin="15px" VerticalAlignment="Center" Padding="40px" Background="White" MaxWidth="500px" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightCoral" ShadowDepth="0"></DropShadowEffect>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="Авторизація" FontSize="28px" TextAlignment="Center" FontWeight="Bold" Margin="0 0 0 20"/>
+                <Grid Margin="0 0 0 20">
+                    <Button Click="Button_Reg_Click" HorizontalAlignment="Left">Регистрация</Button>
+                    <Button HorizontalAlignment="Right" Style="{StaticResource MaterialDesignFlatButton}">Войти</Button>
+                </Grid>
+                <TextBox x:Name="textlogin" MouseDoubleClick="textlogin_MouseLeave" materialDesign:HintAssist.Hint="Введите логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+                <PasswordBox x:Name="textpassword" MouseDoubleClick="textpassword_MouseDoubleClick" materialDesign:HintAssist.Hint="Введите пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"></PasswordBox>
+                <Button Content="Зайти до кабінету" x:Name="authButton" Margin="0 20" Click="Button_Auth_Click" ></Button>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
